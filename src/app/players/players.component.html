@@ -1,0 +1,31 @@
+<div>
+  <span class="p-float-label">
+    <input id="float-input" type="text" pInputText formControlName="name">
+    <label for="float-input">Name</label>
+</span>
+</div>
+
+<p-table >
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Name</th>
+          <th>Last Name</th>
+          <th>Position</th>
+          <th>Weight</th>
+          <th>Height</th>
+          <th>Nationality</th>
+          <th>LeftFooted</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" *ngFor="let player of team">
+      <tr>
+          <td>{{player.name}}</td>
+          <td>{{player.lastName}}</td>
+          <td>{{player.position}}</td>
+          <td>{{player.weight}}</td>
+          <td>{{player.height}}</td>
+          <td>{{player.nationality}}</td>
+          <td>{{player.leftFooted}}</td>
+      </tr>
+  </ng-template>
+</p-table>
