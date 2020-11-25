@@ -15,15 +15,17 @@ export class PlayersComponent implements OnInit {
   }
 
   players: Array<any> = [];
+  positions = [1 ,2 ,3 ,4, 5, 6, 7, 8, 9, 10, 11];
+  foot = ['left-footed', 'rigth-footed']
 
   team = new FormGroup({
     name: new FormControl('', [Validators.required]),
     lastName: new FormControl('', [Validators.required]),
-    position: new FormControl('', [Validators.required]),
+    position: new FormControl('',),
     weight: new FormControl('', [Validators.required]),
     height: new FormControl('', [Validators.required]),
     nationality: new FormControl('', [Validators.required]),
-    leftFooted: new FormControl('', [Validators.required]),
+    leftFooted: new FormControl(''),
   });
 
   constructor() {}
@@ -63,7 +65,7 @@ export class PlayersComponent implements OnInit {
   addPlayerToTheTeam() {
     if (this.team.valid) {
       this.players.push(this.team.value);
-      console.log(this.players);
+      console.log(this.team.value);
     }
     this.team.reset()
   }

@@ -1,67 +1,114 @@
 <section>
-  <p-dialog header="Title" [(visible)]="display">
+
+  <p-dialog header="Add your Player's info" [(visible)]="display">
+
     <form [formGroup]="team" class="container">
       <div class="p-float-label">
-        <input id="name-input" type="text" pInputText formControlName="name">
+        <input id="name-input" type="text" pInputText formControlName="name" />
         <label for="name-input">Name</label>
       </div>
       <div class="p-float-label">
-        <input id="lastname-input" type="text" pInputText formControlName="lastName">
-        <label for="lastname-input">lastName</label>
+        <input
+          id="lastname-input"
+          type="text"
+          pInputText
+          formControlName="lastName"
+        />
+        <label for="lastname-input">Last Name</label>
+      </div>
+      <div>
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="dropdown"
+            [autoDisplayFirst]="false"
+            [options]="positions"
+          ></p-dropdown>
+          <label for="dropdown">Position</label>
+        </span>
       </div>
       <div class="p-float-label">
-        <input id="position-input" type="text" pInputText formControlName="position">
-        <label for="position-input">position</label>
+        <input
+          id="weight-input"
+          type="number"
+          pInputText
+          formControlName="weight"
+        />
+        <label for="weight-input">Weight</label>
       </div>
       <div class="p-float-label">
-        <input id="weight-input" type="text" pInputText formControlName="weight">
-        <label for="weight-input">weight</label>
+        <input
+          id="height-input"
+          type="number"
+          pInputText
+          formControlName="height"
+        />
+        <label for="height-input">Height</label>
       </div>
       <div class="p-float-label">
-        <input id="height-input" type="text" pInputText formControlName="height">
-        <label for="height-input">height</label>
+        <input
+          id="nationality-input"
+          type="text"
+          pInputText
+          formControlName="nationality"
+        />
+        <label for="nationality-input">Nationality</label>
       </div>
-      <div class="p-float-label">
-        <input id="nationality-input" type="text" pInputText formControlName="nationality">
-        <label for="nationality-input">nationality</label>
-      </div>
-      <div class="p-float-label">
-        <input id="leftfooted-input" type="text" pInputText formControlName="leftFooted">
-        <label for="leftfooted-input">leftFooted</label>
+      <div>
+        <span class="p-float-label">
+          <p-dropdown
+            inputId="dropdown"
+            [autoDisplayFirst]="false"
+            [options]="foot"
+          ></p-dropdown>
+          <label for="dropdown">Foot</label>
+        </span>
       </div>
     </form>
 
-    <button pButton type="button" label="OK" (click)="addPlayerToTheTeam()"></button>
+    <button
+      pButton
+      type="button"
+      label="OK"
+      (click)="addPlayerToTheTeam()"
+    ></button>
   </p-dialog>
+
 </section>
 
-<div>
-  <button pButton type="button" (click)="showDialog()" label="Add Player"></button>
-</div>
+<section>
+  <div>
+    <button
+    pButton
+    type="button"
+    (click)="showDialog()"
+    label="Add Player"
+    ></button>
+  </div>
+</section>
 
 <section>
   <p-table [value]="players">
     <ng-template pTemplate="header">
-        <tr>
-            <th>Name</th>
-            <th>Last Name</th>
-            <th>Position</th>
-            <th>Weight</th>
-            <th>Height</th>
-            <th>Nationality</th>
-            <th>LeftFooted</th>
-        </tr>
+      <tr>
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>Position</th>
+        <th>Weight</th>
+        <th>Height</th>
+        <th>Nationality</th>
+        <th>LeftFooted</th>
+      </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-player >
-        <tr >
-            <td>{{player.name}}</td>
-            <td>{{player.lastName}}</td>
-            <td>{{player.position}}</td>
-            <td>{{player.weight}}</td>
-            <td>{{player.height}}</td>
-            <td>{{player.nationality}}</td>
-            <td>{{player.leftFooted}}</td>
-        </tr>
+    <ng-template pTemplate="body" let-player>
+      <tr>
+        <td>{{ player.name }}</td>
+        <td>{{ player.lastName }}</td>
+        <td>{{ player.position }}</td>
+        <td>{{ player.weight }}</td>
+        <td>{{ player.height }}</td>
+        <td>{{ player.nationality }}</td>
+        <td>{{ player.leftFooted }}</td>
+      </tr>
     </ng-template>
   </p-table>
 </section>

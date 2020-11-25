@@ -1,0 +1,8 @@
+.field-container {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 30vh;
+}
+.field-container img {
+  width: 100%;
+}

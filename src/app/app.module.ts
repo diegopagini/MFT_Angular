@@ -10,9 +10,12 @@ import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
+import { DropdownModule } from 'primeng/dropdown';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { FieldComponent } from './field/field.component';
 
 @NgModule({
-  declarations: [AppComponent, PlayersComponent],
+  declarations: [AppComponent, PlayersComponent, FieldComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -23,6 +26,8 @@ import { DialogModule } from 'primeng/dialog';
     TableModule,
     InputTextModule,
     DialogModule,
+    DropdownModule,
+    RadioButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
