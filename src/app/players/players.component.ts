@@ -1,37 +1,71 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-players',
   templateUrl: './players.component.html',
-  styleUrls: ['./players.component.css']
+  styleUrls: ['./players.component.css'],
 })
 export class PlayersComponent implements OnInit {
 
-  players: any = []
+  display: boolean = false;
+
+  showDialog() {
+      this.display = true;
+  }
+
+  players: Array<any> = [];
 
   team = new FormGroup({
-    name: new FormControl(''),
-    lastName: new FormControl(''),
-    position: new FormControl(''),
-    weight: new FormControl(''),
-    height: new FormControl(''),
-    nationality: new FormControl(''),
-    leftFooted: new FormControl('')
-  })
+    name: new FormControl('', [Validators.required]),
+    lastName: new FormControl('', [Validators.required]),
+    position: new FormControl('', [Validators.required]),
+    weight: new FormControl('', [Validators.required]),
+    height: new FormControl('', [Validators.required]),
+    nationality: new FormControl('', [Validators.required]),
+    leftFooted: new FormControl('', [Validators.required]),
+  });
 
-  get name() {
-    return this.team.get('name')
+  constructor() {}
+
+  ngOnInit(): void {
+
+  }
+
+  get nameField() {
+    return this.team.get('name');
+  }
+
+  get lastNameField() {
+    return this.team.get('lastName');
+  }
+
+  get positionField() {
+    return this.team.get('position');
+  }
+
+  get weightField() {
+    return this.team.get('weight');
+  }
+
+  get heightField() {
+    return this.team.get('height');
+  }
+
+  get nationalityField() {
+    return this.team.get('nationality');
+  }
+
+  get leftFootedField() {
+    return this.team.get('leftFooted');
   }
 
   addPlayerToTheTeam() {
-    this.players.push(this.team.value)
+    if (this.team.valid) {
+      this.players.push(this.team.value);
+      console.log(this.players);
+    }
+    this.team.reset()
   }
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 
 }
