@@ -1,8 +1,66 @@
 .field-container {
   max-width: 600px;
   margin: 0 auto;
-  margin-top: 30vh;
+  margin-top: 10vh;
+  position: relative;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .field-container img {
   width: 100%;
+}
+
+.position {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 3px solid white;
+  position: absolute;
+}
+.one {
+  top: 45%;
+  left: 6%;
+}
+.two {
+  top: 30%;
+  left: 20%;
+}
+.six {
+  top: 60%;
+  left: 20%;
+}
+.three {
+  top: 10%;
+  left: 28%;
+}
+.four {
+  top: 80%;
+  left: 28%;
+}
+.five {
+  top: 45%;
+  left: 40%;
+}
+.eight {
+  top: 75%;
+  left: 60%;
+}
+.eleven{
+  top: 15%;
+  left: 60%;
+}
+.ten{
+  top: 45%;
+  left: 70%;
+}
+.seven {
+  top: 65%;
+  left: 80%;
+}
+.nine {
+  top: 25%;
+  left: 80%;
 }
