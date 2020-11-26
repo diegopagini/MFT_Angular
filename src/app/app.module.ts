@@ -13,6 +13,7 @@ import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { FieldComponent } from './field/field.component';
+import {MenubarModule} from 'primeng/menubar';
 
 @NgModule({
   declarations: [AppComponent, PlayersComponent, FieldComponent],
@@ -28,6 +29,7 @@ import { FieldComponent } from './field/field.component';
     DialogModule,
     DropdownModule,
     RadioButtonModule,
+    MenubarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

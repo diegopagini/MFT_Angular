@@ -1,7 +1,5 @@
 <section>
-
   <p-dialog header="Add your Player's info" [(visible)]="display">
-
     <form [formGroup]="team" class="container">
       <div class="p-float-label">
         <input id="name-input" type="text" pInputText formControlName="name" />
@@ -72,16 +70,15 @@
       (click)="addPlayerToTheTeam()"
     ></button>
   </p-dialog>
-
 </section>
 
 <section>
   <div>
     <button
-    pButton
-    type="button"
-    (click)="showDialog()"
-    label="Add Player"
+      pButton
+      type="button"
+      (click)="showDialog()"
+      label="Add Player"
     ></button>
   </div>
 </section>

@@ -36,7 +36,10 @@ export class PlayersComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-
+    this.team.controls.name.valueChanges.subscribe(selectedValue => {
+      this.filterCharacter()
+      console.log(selectedValue)
+    })
   }
 
   get nameField() {
@@ -73,6 +76,14 @@ export class PlayersComponent implements OnInit {
       console.log(this.team.value);
     }
     this.team.reset()
+  }
+
+  filterCharacter() {
+    this.players.filter(el => {
+      if (el.name == 'diego') {
+        document.getElementById('one').style.backgroundColor = "red"
+      }
+    })
   }
 
 }
