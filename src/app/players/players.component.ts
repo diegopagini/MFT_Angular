@@ -11,7 +11,7 @@ export class PlayersComponent implements OnInit {
   display: boolean = false;
 
   showDialog() {
-      this.display = true;
+    this.display = true;
   }
 
   players: Array<any> = [];
@@ -21,7 +21,12 @@ export class PlayersComponent implements OnInit {
   team = new FormGroup({
     name: new FormControl('', [Validators.required]),
     lastName: new FormControl('', [Validators.required]),
-    position: new FormControl('',),
+    position: new FormControl(''),
+    // position: new FormGroup({
+    //   1: new FormControl(1),
+    //   2: new FormControl(2),
+    //   3: new FormControl(3),
+    // }),
     weight: new FormControl('', [Validators.required]),
     height: new FormControl('', [Validators.required]),
     nationality: new FormControl('', [Validators.required]),
