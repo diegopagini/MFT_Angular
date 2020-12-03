@@ -1,7 +1,5 @@
 <section>
-
   <p-dialog header="Add your Player's info" [(visible)]="display">
-
     <form [formGroup]="team" class="container">
       <div class="p-float-label">
         <input id="name-input" type="text" pInputText formControlName="name" />
@@ -20,6 +18,7 @@
         <span class="p-float-label">
           <p-dropdown
             inputId="dropdown"
+            formControlName="position"
             [autoDisplayFirst]="false"
             [options]="positions"
           ></p-dropdown>
@@ -57,6 +56,7 @@
         <span class="p-float-label">
           <p-dropdown
             inputId="dropdown"
+            formControlName="leftFooted"
             [autoDisplayFirst]="false"
             [options]="foot"
           ></p-dropdown>
@@ -69,19 +69,18 @@
       pButton
       type="button"
       label="OK"
-      (click)="addPlayerToTheTeam()"
+      (click)="onClick()"
     ></button>
   </p-dialog>
-
 </section>
 
 <section>
   <div>
     <button
-    pButton
-    type="button"
-    (click)="showDialog()"
-    label="Add Player"
+      pButton
+      type="button"
+      (click)="showDialog()"
+      label="Add Player"
     ></button>
   </div>
 </section>
@@ -104,8 +103,8 @@
         <td>{{ player.name }}</td>
         <td>{{ player.lastName }}</td>
         <td>{{ player.position }}</td>
-        <td>{{ player.weight }}</td>
-        <td>{{ player.height }}</td>
+        <td>{{ player.weight | number }}</td>
+        <td>{{ player.height | number }}</td>
         <td>{{ player.nationality }}</td>
         <td>{{ player.leftFooted }}</td>
       </tr>
