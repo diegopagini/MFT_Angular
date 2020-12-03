@@ -68,6 +68,7 @@ export class PlayersComponent implements OnInit {
       this.players.push(this.team.value);
     }
     this.team.reset();
+    this.display = false;
   }
 
   filterCharacter() {
